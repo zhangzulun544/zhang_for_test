@@ -1,8 +1,6 @@
 #————————————————————测试基类封装——————————————————————————————————————
 import logging
-from selenium import webdriver
 from selenium.common.exceptions import NoSuchElementException
-import os
 import time
 
 
@@ -79,6 +77,8 @@ class All_set(object):
 
     def windows(self,c,k):              #设置网页窗口尺寸，没啥用
         self.driver.set_window_size(c,k)
+
+
 # from selenium import webdriver
 # import time
 # from selenium.webdriver.common.action_chains import ActionChains
