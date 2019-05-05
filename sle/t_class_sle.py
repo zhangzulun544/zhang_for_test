@@ -1,20 +1,30 @@
 #————————————————————测试基类封装——————————————————————————————————————
 import logging
 from selenium.common.exceptions import NoSuchElementException
+from selenium.webdriver.common.action_chains import ActionChains                #鼠标包
+# from selenium.webdriver.support import expected_conditions as EC              #显式等待包
+# from selenium.webdriver.support.ui import WebDriverWait
+# from selenium.webdriver.common.by import By
 import time
+from time import ctime
 
 
 class All_set(object):
     #封装selenium的元素定位和其他功能，具体根据不同业务来定
     def __init__(self,driver):
-        self.driver = driver                                                                    #定义基本驱动参数
-        self.all_list = ["id", "name", "class", "tag", "link", "plink", "css", "xpath"]         #设置8种selenium中的定位类型作为列表，下面做判断
+        # 定义基本驱动参数
+        self.driver = driver
+        # 设置8种selenium中的定位类型作为列表，下面做判断
+        self.all_list = ["id", "name", "class", "tag", "link", "plink", "css", "xpath"]
+    #寻找页面元素的8种方法，根据传的selector参数（列表）来判断
     def find_element(self,selector):
+        self.driver.implicitly_wait(10)
         by = selector[0]
         value = selector[1]
         element = None
         if by in self.all_list:
             try:
+                print(ctime())
                 if by == "id":
                     element = self.driver.find_element_by_id(value)
                 elif by == "name":
@@ -37,9 +47,11 @@ class All_set(object):
                 return element
             except NoSuchElementException:
                 logging.error("报错信息：",exc_info = 1 )
+            finally:
+                print(ctime())
         else:
             logging.error("输入的元素定位方式错误")
-
+    #键入输入框内容
     def type(self,selector,value):
         element = self.find_element(selector)
         # element.clear()
@@ -49,49 +61,55 @@ class All_set(object):
            # logging.info("输入的内容%s"%value)
         except BaseException:
             logging.error("输入的内容错误")
-
+    #点击
     def click(self,selecotor):
         element = self.find_element(selecotor)
         try:
             element.click()
         except BaseException:
             logging.error("点击错误")
-
+    #强制暂停
     def sleep(self,seconds):
         time.sleep(seconds)
         logging.info("暂停%s秒"%seconds)
-
+    #关闭网页
     def quit(self):
         self.driver.quit()
         logging.info("关闭浏览器")
+    #后退
     def back(self):
         self.driver.back()
         logging.info("后退")
+    #前进
     def forward(self):
         self.driver.forward()
         logging.info("前进")
-
+    #刷新
     def refresh(self):
         self.driver.refresh()
         logging.info("刷新")
 
-    def windows(self,c,k):              #设置网页窗口尺寸，没啥用
+    # 设置网页窗口尺寸，没啥用
+    def windows(self,c,k):
         self.driver.set_window_size(c,k)
+    #切换窗口,参数为1返回所有，其他则返回当前窗口
+    def windows_handle(self,handle):
+        all_windows = self.driver.window_handles
+        now_windos = self.driver.current_window_handle
+        if handle ==1:
+            return all_windows
+        else:
+            return now_windos
+    #鼠标悬停
+    def action(self,selector):
+        adove = self.find_element(selector)
+        ActionChains(self.driver).move_to_element(adove).perform()
+    #隐式等待
+    def implicitly(self,time):
+        self.driver.implicitly_wait(time)
 
 
-# from selenium import webdriver
-# import time
-# from selenium.webdriver.common.action_chains import ActionChains
-# from paly_new import dalong
+    #显式等待
+    # def wait(self):
+    #     element = WebDriverWait(self.driver,5,0.5).until(EC.presence_of_element_located(By.ID,"key"))
 
-# driver = webdriver.Firefox()
-#
-# driver.get("http://192.168.1.106:9528/#/login")
-#
-# print(driver.title)
-#
-# driver.find_element_by_name("phone").send_keys(18329039512)
-# driver.find_element_by_name("password").send_keys("654321")
-# time.sleep(3)
-# denglu = driver.find_element_by_xpath("//*[@id='app']/section/main/div/div[2]/form/div[4]/div/button/span")
-# ActionChains(driver).click(denglu).perform()                                                                              #傻吊式登录操作
