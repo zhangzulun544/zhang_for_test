@@ -1,0 +1,32 @@
+
+#case:
+-       #1.配货分析-未配数量分析的查询
+    url: /stewards/reportDistributor/selectBillOrderNotDistributorAnalysis.json
+    method: post
+    data:
+        goodsCode:
+        goodsYear:
+        goodsSeason:
+        goodsType:
+        distributorIdList: '["null"]'
+        pageSize: 15
+        pageNum: 1
+        startTime:
+        endTime:
+    check: "成功"
+
+-       #2.商品分析-销售分析，搜索不存在的商品时，总计是数量和金额还是会显示。
+    url: /stewards/reportGoodsAnalysis/selectGoodsSale.json
+    method: post
+    data:
+        goodsCode:
+        goodsYear:
+        goodsSeason:
+        goodsType:
+        distributorId:
+        orderTypeList: '["null"]'
+        pageSize: 15
+        pageNum: 1
+        startTime:
+        endTime:
+    check: "成功"

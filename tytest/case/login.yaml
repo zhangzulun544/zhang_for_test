@@ -1,0 +1,24 @@
+#params: {name: zhb, age: 233}  #flow写法
+
+url: /stewards/login/login.json
+method: post
+data:
+    phone: 18329039512                  #老谭账号
+    password: 654321
+check: '000000'
+
+
+
+#url: /stewards/login/login.json
+#method: post
+#data:
+#    phone: 18329039512                 #测试账号
+#    password: 654321
+#check: '000000'
+
+#url: /stewards/login/login.json
+#method: post
+#data:
+#    phone: 13868789679                 #陈铃琴账号
+#    password: 123456
+#check: '000000'
