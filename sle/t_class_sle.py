@@ -10,13 +10,15 @@ from time import ctime
 
 
 class All_set(object):
+
     #封装selenium的元素定位和其他功能，具体根据不同业务来定
     def __init__(self,driver):
         # 定义基本驱动参数
         self.driver = driver
         # 设置8种selenium中的定位类型作为列表，下面做判断
         self.all_list = ["id", "name", "class", "tag", "link", "plink", "css", "xpath"]
-    #寻找页面元素的8种方法，根据传的selector参数（列表）来判断
+
+    #寻找页面元素的8种方法，根据传的selector参数（list）来判断
     def find_element(self,selector):
         self.driver.implicitly_wait(10)
         by = selector[0]
@@ -51,6 +53,7 @@ class All_set(object):
                 print(ctime())
         else:
             logging.error("输入的元素定位方式错误")
+
     #键入输入框内容
     def type(self,selector,value):
         element = self.find_element(selector)
@@ -61,29 +64,43 @@ class All_set(object):
            # logging.info("输入的内容%s"%value)
         except BaseException:
             logging.error("输入的内容错误")
+
     #点击
-    def click(self,selecotor):
-        element = self.find_element(selecotor)
+    def click(self,selector):
+        element = self.find_element(selector)
         try:
             element.click()
         except BaseException:
             logging.error("点击错误")
+
+    def submit(self,selector):
+        element = self.find_element(selector)
+        element.submit()
+
     #强制暂停
-    def sleep(self,seconds):
-        time.sleep(seconds)
-        logging.info("暂停%s秒"%seconds)
+    # def sleep(self,seconds):
+    #     time.sleep(seconds)
+    #     logging.info("暂停%s秒"%seconds)
+
     #关闭网页
     def quit(self):
         self.driver.quit()
         logging.info("关闭浏览器")
+
+    def close(self):
+        self.driver.close()
+        logging.info("关闭单个窗口")
+
     #后退
     def back(self):
         self.driver.back()
         logging.info("后退")
+
     #前进
     def forward(self):
         self.driver.forward()
         logging.info("前进")
+
     #刷新
     def refresh(self):
         self.driver.refresh()
@@ -92,18 +109,17 @@ class All_set(object):
     # 设置网页窗口尺寸，没啥用
     def windows(self,c,k):
         self.driver.set_window_size(c,k)
-    #切换窗口,参数为1返回所有，其他则返回当前窗口
+
+    #切换窗口,返回所有窗口一个list
     def windows_handle(self,handle):
         all_windows = self.driver.window_handles
-        now_windos = self.driver.current_window_handle
-        if handle ==1:
-            return all_windows
-        else:
-            return now_windos
+        return all_windows
+
     #鼠标悬停
     def action(self,selector):
         adove = self.find_element(selector)
         ActionChains(self.driver).move_to_element(adove).perform()
+
     #隐式等待
     def implicitly(self,time):
         self.driver.implicitly_wait(time)
