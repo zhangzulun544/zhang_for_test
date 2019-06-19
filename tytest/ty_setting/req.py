@@ -3,13 +3,13 @@ import json
 
 r = requests.Session()
 
-m_url = "http://192.168.1.106:9528"  # 环境
+m_url = "http://192.168.1.106:9528/stewards"  # 环境
 
 
 def req(url, data, method):  # 请求方法，根据metho判断请求方式
 
     if method == "post":
-        re = r.post(url=m_url + url, data=data)
+        re = r.post(url=m_url + url, data=data,allow_redirects=False)
         try:
             re.raise_for_status()
             js = json.loads(re.text)
@@ -18,7 +18,7 @@ def req(url, data, method):  # 请求方法，根据metho判断请求方式
             print("请求失败")
             return re.status_code
     else:
-        re = r.get(url=m_url + url, data=data)
+        re = r.get(url=m_url + url, data=data,allow_redirects=False)
         try:
             re.raise_for_status()
             js = json.loads(re.text)

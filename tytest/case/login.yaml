@@ -1,6 +1,6 @@
 #params: {name: zhb, age: 233}  #flow写法
 
-url: /stewards/login/login.json
+url: /login/login.json
 method: post
 data:
     phone: 18329039512                  #老谭账号
