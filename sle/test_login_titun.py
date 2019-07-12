@@ -49,12 +49,13 @@ def test_sql_purchase_order():
     Sql = DB.DB()
     find_purchase_order = ["*", "`bill_purchase_order` order by gmt_create desc LIMIT 1;"]
     results = Sql.find(find_purchase_order)
+    #实例化封装好的数据库操作，从结果中取数据和最开始的列表进行对比
     for r in results:
         try:
-            assert r[1] == l.pop()
+            assert r[1] == l[-1]
+            print("新建的采购单号："+l.pop(),"数据库单号:"+r[1])
         except:
-            print("采购单不匹配",)
-
+            print("采购单不匹配"+"/n",l.pop(), r[1])
 if __name__ == '__main__':
 
     pytest.main(['-s', '-q', '--alluredir', './report/xml'])
