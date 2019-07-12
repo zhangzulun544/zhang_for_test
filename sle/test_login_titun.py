@@ -35,7 +35,6 @@ def test_login():
     except:
         print("程序错误")
 
-#    assert d.find_element(["css","html body div#app div.app-wrapper div.main-container ul.navbar.el-menu--horizontal.el-menu div.rightInfo div.avatar-container.el-dropdown div.avatar-wrapper.el-dropdown-selfdefine span.avatar-user-name"]).text == "张祖伦"
 
 if __name__ == '__main__':
 
