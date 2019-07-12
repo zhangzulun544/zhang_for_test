@@ -1,4 +1,4 @@
-#————————————————————测试基类封装——————————————————————————————————————
+#————————————————————selenium测试基类封装——————————————————————————————————————
 import logging
 from selenium.common.exceptions import NoSuchElementException
 from selenium.webdriver.common.action_chains import ActionChains                #鼠标包

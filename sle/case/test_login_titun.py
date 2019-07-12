@@ -1,18 +1,18 @@
-from sle import t_class_sle
 from selenium import webdriver
-from sle import DB
+from sle.setting import DB, t_class_sle
 import yaml
 import time
 import pytest
 
 
-f = open(r'C:\Users\boxun\PycharmProjects\zhang_for_test\sle\sle_login_case.yaml',encoding="utf-8")
+f = open(r'C:\Users\boxun\PycharmProjects\zhang_for_test\sle\config\sle_login_case.yaml',encoding="utf-8")
 y = yaml.load(f,Loader=yaml.FullLoader)
 #提取yaml中的测试用例（元素，输入值，检查点）
 
 l = []      #加个列表存下返回的数据，在第二个测试函数中使用
 
 def test_New_purchase_order():
+
     driver = webdriver.Firefox()
     driver.get("http://192.168.1.15:9528")
     d = t_class_sle.All_set(driver=driver)
@@ -46,6 +46,7 @@ def test_New_purchase_order():
     d.close()
 
 def test_sql_purchase_order():
+
     Sql = DB.DB()
     find_purchase_order = ["*", "`bill_purchase_order` order by gmt_create desc LIMIT 1;"]
     results = Sql.find(find_purchase_order)
@@ -56,6 +57,7 @@ def test_sql_purchase_order():
             print("新建的采购单号："+l.pop(),"数据库单号:"+r[1])
         except:
             print("采购单不匹配"+"/n",l.pop(), r[1])
+
 if __name__ == '__main__':
 
     pytest.main(['-s', '-q', '--alluredir', './report/xml'])

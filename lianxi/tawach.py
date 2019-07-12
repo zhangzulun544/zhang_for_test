@@ -1,4 +1,4 @@
-from sle import t_class_sle
+from sle.setting import t_class_sle
 from selenium import webdriver
 
 diver = webdriver.Firefox()

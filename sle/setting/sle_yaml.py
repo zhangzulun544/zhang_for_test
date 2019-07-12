@@ -1,6 +1,6 @@
 import yaml
 #调试用例
-f = open(r'C:\Users\boxun\PycharmProjects\zhang_for_test\sle\sle_login_case.yaml',encoding="utf-8")
+f = open(r'C:\Users\boxun\PycharmProjects\zhang_for_test\sle\config\sle_login_case.yaml',encoding="utf-8")
 y = yaml.load(f,Loader=yaml.FullLoader)
 
 # print(x)
