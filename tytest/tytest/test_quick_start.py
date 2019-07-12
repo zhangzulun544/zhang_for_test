@@ -23,3 +23,4 @@ class Test_reverse(object):
             for y in i:
                 li.append(y)
         assert li[0] == 2
+

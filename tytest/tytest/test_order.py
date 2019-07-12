@@ -16,4 +16,3 @@ def test_select():                          #进销查询接口测试
 
 if __name__ == '__main__':
     pytest.main(['-s', '-q', '--alluredir', './report/xml'])
-

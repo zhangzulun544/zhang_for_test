@@ -66,7 +66,7 @@ class All_set(object):
             logging.error("输入的内容错误")
 
     #点击
-    def click(self,selector):
+    def click(self,selector,**kw):
         element = self.find_element(selector)
         try:
             element.click()
@@ -107,8 +107,9 @@ class All_set(object):
         logging.info("刷新")
 
     # 设置网页窗口尺寸，没啥用
-    def windows(self,c,k):
-        self.driver.set_window_size(c,k)
+    def windows(self):
+        #self.driver.set_window_size(c,k)
+        self.driver.maximize_window()
 
     #切换窗口,返回所有窗口一个list
     def windows_handle(self,handle):
