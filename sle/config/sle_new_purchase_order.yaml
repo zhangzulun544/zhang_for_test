@@ -1,0 +1,116 @@
+-
+  se:
+    - xpath
+    - //*[@id="app"]/section/main/div/div[2]/form/div[1]/div/div/input
+  value: 18329039512
+#登录输入框
+-
+  se:
+    - xpath
+    - //*[@id="app"]/section/main/div/div[2]/form/div[2]/div/div/input
+  value: 654321
+
+-
+  se:
+    - css
+    - html body div#app section.el-container.login-container.is-vertical main.el-main div.login-form div.login-way form.el-form.el-form--label-left div.el-form-item div.el-form-item__content button.el-button.el-button--primary
+  value:
+
+
+- se:
+    - css
+    - html body div#app div.app-wrapper div.main-container ul.navbar.el-menu--horizontal.el-menu div.rightInfo div.avatar-container.el-dropdown div.avatar-wrapper.el-dropdown-selfdefine span.avatar-user-name
+  value:
+  check: 张祖伦  #检查是否登录
+
+-
+  se:
+    - xpath
+    - //*[@id="app"]/div/div[1]/div[1]/div/ul/div[4]/li/div/span
+  value:
+#进销模块
+-
+  se:
+    - css
+    - html body div#app div.app-wrapper div.sidebar-container.el-scrollbar div.scrollbar-wrapper.el-scrollbar__wrap div.el-scrollbar__view ul.el-menu div.menu-wrapper li.el-submenu.is-opened ul.el-menu.el-menu--inline div.el-badge.item div.menu-wrapper.nest-menu a li.el-menu-item span
+  value:
+#采购管理
+
+-
+  se:
+    - css
+    - html body div#app div.app-wrapper div.main-container section.app-main div#psi-purchase-manage section.el-container.content-container.psi-purchase-manage-list.is-vertical header.el-header button.el-button.el-button--primary.el-button--medium
+  value:
+#新建采购单
+
+-
+  se:
+    - xpath
+    - //*[@id="psi-purchase-manage"]/section/header/form/div[1]/div/div/div[1]/span/span/i
+  value:
+#展开供应商下拉框
+
+-
+  se:
+    - xpath
+    - /html/body/div[2]/div[1]/div[1]/ul/li[1]/span
+  value:
+#  check: 测试供应商
+#选择供应商
+
+-
+  se:
+    - xpath
+    - //*[@id="psi-purchase-manage"]/section/header/form/div[2]/div/div/div/span/span/i
+  value:
+#展开仓库下拉框
+
+-
+  se:
+    - xpath
+    - /html/body/div[3]/div[1]/div[1]/ul/li[1]/span
+  value:
+#  check: 总部仓库
+#选择仓库
+-
+  se:
+    - xpath
+    - //*[@id="psi-purchase-manage"]/section/main/button/span
+  value:
+#添加商品
+
+-
+  se:
+    - xpath
+    - //*[@id="psi-purchase-manage"]/section/div/div/div[2]/section/aside/div[2]/div[3]/table/tbody/tr[1]/td[3]/div/span/button/span
+  value:
+#添加第一个商品
+
+-
+  se:
+    - xpath
+    - //*[@aria-hidden="false"]/label/span[2]
+  value:
+#全选
+
+-
+  se:
+    - xpath
+    - //*[@id="psi-purchase-manage"]/section/div/div/div[3]/span/button[2]/span
+  value:
+#保存商品
+
+-
+  se:
+    - xpath
+    - //*[@id="psi-purchase-manage"]/section/footer/button/span
+  value:
+#保存订单
+
+-
+  se:
+    - xpath
+    - //*[@class="el-table__row"][1]/td[1]
+  value:
+  sql:
+#找到最新的采购单订单号

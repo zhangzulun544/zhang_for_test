@@ -1,0 +1,57 @@
+-
+  se:
+    - xpath
+    - //*[@id="app"]/section/main/div/div[2]/form/div[1]/div/div/input
+  value: 18329039512
+#登录输入框
+-
+  se:
+    - xpath
+    - //*[@id="app"]/section/main/div/div[2]/form/div[2]/div/div/input
+  value: 654321
+
+-
+  se:
+    - css
+    - html body div#app section.el-container.login-container.is-vertical main.el-main div.login-form div.login-way form.el-form.el-form--label-left div.el-form-item div.el-form-item__content button.el-button.el-button--primary
+  value:
+
+
+- se:
+    - css
+    - html body div#app div.app-wrapper div.main-container ul.navbar.el-menu--horizontal.el-menu div.rightInfo div.avatar-container.el-dropdown div.avatar-wrapper.el-dropdown-selfdefine span.avatar-user-name
+  value:
+  check: 张祖伦  #检查是否登录
+
+-
+  se:
+    - xpath
+    - //*[@id="app"]/div/div[1]/div[1]/div/ul/div[4]/li/div/span
+  value:
+#进销模块
+-
+  se:
+    - css
+    - html body div#app div.app-wrapper div.sidebar-container.el-scrollbar div.scrollbar-wrapper.el-scrollbar__wrap div.el-scrollbar__view ul.el-menu div.menu-wrapper li.el-submenu.is-opened ul.el-menu.el-menu--inline div.el-badge.item div.menu-wrapper.nest-menu a li.el-menu-item span
+  value:
+#采购管理
+-
+  se:
+    - xpath
+    - //*[@id="top-filter-transform"]/div/div[3]/div/span/span
+  value:
+#筛选入库仓库
+
+-
+  se:
+    - xpath
+    - /html/body/div[2]/div[1]/div[1]/ul/li[1]/span
+  value:
+#x选择第一个仓库
+-
+  se:
+    - xpath
+    - //*[@id="top-filter-transform"]/div/button/span
+  value:
+#点击查询
+
