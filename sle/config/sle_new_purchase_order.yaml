@@ -113,4 +113,76 @@
     - //*[@class="el-table__row"][1]/td[1]
   value:
   sql:
-#找到最新的采购单订单号
+#找到最新的采购单订单号，在case里检测
+
+##下面接着打印
+#-
+#  se:
+#    - xpath
+#    - //*[@id="app"]/div/div[1]/div[1]/div/ul/div[6]/li/div/i
+#  value:
+##打印管理
+#
+#-
+#  se:
+#    - xpath
+#    - //*[@id="app"]/div/div[1]/div[1]/div/ul/div[6]/li/ul/div[2]/a/li/span
+#  value:
+##标签打印
+#
+#-
+#  se:
+#    - xpath
+#    - //*[@class="el-header"]/button[1]
+#  value:
+##引用采购单
+#
+#-
+#  se:
+#    - xpath
+#    - //*[@class="el-table__body-wrapper is-scrolling-none"]//*[@class="el-table__row"][1]/td[8]/div/button
+#  value:
+##引用第一个采购单
+#
+#
+##- se:
+##    - xpath
+##    - //*[@class="el-pagination__total"]
+##  value:
+##  check: 2
+##检查是否引用在list界面中
+#
+#-
+#  se:
+#    - xpath
+#    - //*[@class="el-header"]/button[6]
+#  value:
+##选择单模板打印
+#
+#-
+#  se:
+#    - xpath
+#    - //*[@class="el-select el-select--medium"]//*[@class="el-input__suffix"]
+#  value:
+##选择模板下拉框
+#
+#-
+#  se:
+#    - xpath
+#    - /html/body/div[3]/div[1]/div[1]/ul/li[1]/span
+#  value:
+##选择默认模板打印
+#
+#
+#-
+#  se:
+#    - xpath
+#    - //*[@id="print-ebi-print"]/div[6]/div/div[3]/span/button[1]/span
+#  value:
+##打印吊牌
+#
+#- se:
+#    - xpath
+#    - /html/body/div[3]/div/div[2]/div[2]/p
+#  value:
+#  check: 打印请求发送成功，打印过程中请勿重复发送打印请求，以免造成数据错误！

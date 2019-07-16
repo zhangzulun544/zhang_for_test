@@ -31,19 +31,21 @@ def test_page_order():
 
     html = driver.execute_script('return document.documentElement.outerHTML') #返回加载完的html,很好用
     dom = etree.HTML(html)
-    content = dom.xpath('//*[@class="el-table__body"]/tbody/tr')
+    content = dom.xpath('//*[@class="el-table__body"]/tbody/tr')        #list界面的每一行
 
     for i in content:
         try:
-            assert "总部仓库1" in i.xpath("./td[3]/div//text()")
+            assert "总部仓库1" in i.xpath("./td[3]/div//text()")     #遍历断言，每一行下的仓库
         except:
             print("按条件查询出错")
+
 if __name__ == '__main__':
     pytest.main(["test_page_order.py"])
 
 
+
     # pytest.main(['-s', '-q', '--alluredir', './report/xml'])
-#
+
 # from selenium import webdriver
 # d = webdriver.Firefox()
 # d.get("http://www.titun365.com")
