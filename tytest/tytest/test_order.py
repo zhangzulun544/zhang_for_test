@@ -2,7 +2,7 @@ import yaml
 import pytest
 from tytest.ty_setting import login, req
 import logging
-fname = open(r'C:\Users\boxun\PycharmProjects\zhang_for_test\tytest\case\select.yaml',encoding='utf-8')
+fname = open(r'C:\Users\boxun\PycharmProjects\zhang_for_test\sle\config\sle_new_purchase_order.yaml',encoding='utf-8')
 case = yaml.load(fname,Loader=yaml.FullLoader)
 
 

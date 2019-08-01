@@ -1,0 +1,13 @@
+ERROR    root:t_class_sle.py:51 报错信息：
+Traceback (most recent call last):
+  File "C:\Users\boxun\PycharmProjects\zhang_for_test\sle\setting\t_class_sle.py", line 43, in find_element
+    element = self.driver.find_element_by_css_selector(value)
+  File "C:\Users\boxun\PycharmProjects\zhang_burcent\venv\lib\site-packages\selenium\webdriver\remote\webdriver.py", line 598, in find_element_by_css_selector
+    return self.find_element(by=By.CSS_SELECTOR, value=css_selector)
+  File "C:\Users\boxun\PycharmProjects\zhang_burcent\venv\lib\site-packages\selenium\webdriver\remote\webdriver.py", line 978, in find_element
+    'value': value})['value']
+  File "C:\Users\boxun\PycharmProjects\zhang_burcent\venv\lib\site-packages\selenium\webdriver\remote\webdriver.py", line 321, in execute
+    self.error_handler.check_response(response)
+  File "C:\Users\boxun\PycharmProjects\zhang_burcent\venv\lib\site-packages\selenium\webdriver\remote\errorhandler.py", line 242, in check_response
+    raise exception_class(message, screen, stacktrace)
+selenium.common.exceptions.NoSuchElementException: Message: Unable to locate element: html body div#app div.app-wrapper div.main-container ul.navbar.el-menu--horizontal.el-menu div.rightInfo div.avatar-container.el-dropdown div.avatar-wrapper.el-dropdown-selfdefine span.avatar-user-name

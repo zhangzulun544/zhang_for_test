@@ -1,0 +1,126 @@
+
+#-       #新建采购单
+#    url: /billPurchaseOrder/insertPurchaseOrder.json
+#    method: post
+#    data:
+#        providerId: 84
+#        warehouseId: 7
+#        note:
+#        goodsDetailsList: '[{"goodsDetailId":28282,"goodsCount":1},{"goodsDetailId":28283,"goodsCount":1},{"goodsDetailId":28284,"goodsCount":1},{"goodsDetailId":28285,"goodsCount":1},{"goodsDetailId":28286,"goodsCount":1}]'
+#        orderType: 1
+
+-       #查询采购单界面
+    url: /billPurchaseOrder/selectBillPurchaseOrderList.json
+    method: post
+    data:
+        billSn:
+        providerId:
+        warehouseId:
+        creator:
+        status:
+        startTime:
+        endTime:
+        pageNum: 1      #分页
+        pageSize: 15
+    rp: "msg"
+    check: "成功"
+
+-       #查询入库单界面
+    url: /billProvideIn/selectBillProvideBillInList.json
+    method: post
+    data:
+        billSn:
+        billPurchaseOrderSn:
+        warehouseId:
+        providerId:
+        status:
+        creator:
+        startTime:
+        endTime:
+        pageSize: 15
+        pageNum: 1
+    rp: "msg"
+    check: "成功"
+
+-       #查询退库单界面
+    url: /billProvideReturn/selectBillProvideReturnList.json
+    method: post
+    data:
+        billSn:
+        providerId:
+        warehouseId:
+        startTime:
+        endTime:
+        creator:
+        status:
+        pageNum: 1
+        pageSize: 15
+    rp: "msg"
+    check: "成功"
+
+-       #查询分销商订单界面
+    url: /billOrder/selectBillOrderList.json
+    method: post
+    data:
+        status:
+        distributorId:
+        startTime:
+        endTime:
+        billSn:
+        goodsUniqueCode:
+        creatorId:
+        pageNum: 1
+        pageSize: 15
+    rp: "msg"
+    check: "成功"
+
+
+-       #查询配货单界面
+    url: /billDistribution/selectBillDistributionList.json
+    method: post
+    data:
+        distributorId:
+        outWarehouseId:
+        billSn:
+        billOrderSn:
+        creator:
+        status:
+        startTime:
+        endTime:
+        pageNum: 1
+        pageSize: 15
+    rp: "msg"
+    check: "成功"
+
+-       #查询出库单界面
+    url: /billDistribution/stockOut/selectBillDistributionStockOutList.json
+    method: post
+    data:
+        billOrderSn:
+        billSn:
+        stockOutSn:
+        distributorId:
+        outWarehouseId:
+        status:
+        startTime:
+        endTime:
+        pageNum: 1
+        pageSize: 15
+    rp: "msg"
+    check: "成功"
+
+
+-       #查询客户退库界面
+    url: /billCustomerReturn/stockIn/selectBillCustomerReturnList.json
+    method: post
+    data:
+        stockInSn:
+        inWarehouseId:
+        distributorId:
+        status:
+        stockInStartTime:
+        stockInEndTime:
+        pageNum: 1
+        pageSize: 15
+    rp: "code"
+    check: "000000"

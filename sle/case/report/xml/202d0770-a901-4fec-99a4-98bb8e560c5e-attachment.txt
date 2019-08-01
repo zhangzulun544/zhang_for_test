@@ -1,0 +1,15 @@
+ERROR    root:t_class_sle.py:51 报错信息：
+Traceback (most recent call last):
+  File "C:\Users\boxun\PycharmProjects\zhang_for_test\sle\setting\t_class_sle.py", line 45, in find_element
+    element = self.driver.find_element_by_xpath(value)
+  File "C:\Users\boxun\PycharmProjects\zhang_burcent\venv\lib\site-packages\selenium\webdriver\remote\webdriver.py", line 394, in find_element_by_xpath
+    return self.find_element(by=By.XPATH, value=xpath)
+  File "C:\Users\boxun\PycharmProjects\zhang_burcent\venv\lib\site-packages\selenium\webdriver\remote\webdriver.py", line 978, in find_element
+    'value': value})['value']
+  File "C:\Users\boxun\PycharmProjects\zhang_burcent\venv\lib\site-packages\selenium\webdriver\remote\webdriver.py", line 321, in execute
+    self.error_handler.check_response(response)
+  File "C:\Users\boxun\PycharmProjects\zhang_burcent\venv\lib\site-packages\selenium\webdriver\remote\errorhandler.py", line 242, in check_response
+    raise exception_class(message, screen, stacktrace)
+selenium.common.exceptions.NoSuchElementException: Message: Unable to locate element: /html/body/div[3]/div[1]/div[1]/ul/li[1]/span
+
+ERROR    root:t_class_sle.py:74 点击错误

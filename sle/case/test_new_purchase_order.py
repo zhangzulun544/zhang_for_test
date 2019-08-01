@@ -48,7 +48,7 @@ def test_sql_purchase_order():
     Sql = DB.DB()
     find_purchase_order = ["*", "`bill_purchase_order` order by gmt_create desc LIMIT 1;"]
     results = Sql.find(find_purchase_order)
-    #实例化封装好的数据库操作，从结果中取数据和最开始的列表进行对比
+    #实例化封装好的数据库操作，从结果中取数据和最开始的列表进行对比，查询自动建好的采购单在不在数据库里
 
     for r in results:
         try:

@@ -24,3 +24,8 @@ class DB(object):
         tu_2 = str(tu[1])
         sql = "insert into %s values(%s)"%(tu_1,tu_2)  #根据需求来改 ,UI自动化用不怎么到
         self.db.cursor(sql).execute()
+
+
+x = DB()
+
+y = x.find([])

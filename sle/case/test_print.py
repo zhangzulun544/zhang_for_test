@@ -33,3 +33,4 @@ def test_page_order():
 
 if __name__ == '__main__':
     pytest.main(["test_print.py"])
+#单独的打印不包含建采购单

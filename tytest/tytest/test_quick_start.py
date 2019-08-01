@@ -24,3 +24,7 @@ class Test_reverse(object):
                 li.append(y)
         assert li[0] == 2
 
+
+if __name__ == '__main__':
+
+    pytest.main()

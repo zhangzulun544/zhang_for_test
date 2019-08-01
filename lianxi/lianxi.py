@@ -8,7 +8,7 @@
 #                 l[i],l[j] = l[j],l[i]
 #
 #     return (l[0],l[-1])
-#
+
 # def findmax(l):             #用赋值迭代比较挑出最大和最小值
 #     le = len(l)
 #     max = l[0]
@@ -30,7 +30,7 @@
 
 
 # l1 = [x for x in range(1,199)]
-# l2 = (x for x in range(1,20))
+# l2 = (x for x in range(1,20)) 生成器（generator）generator保存的是算法
 # for i in l2:
 #     print(i)
 
@@ -191,3 +191,80 @@
 # x = fib(10)
 # print(x)
 
+# from sle import DB
+#
+# Sql = DB.DB()
+# find_purchase_order = ["*","`bill_purchase_order` order by gmt_create desc LIMIT 1;"]
+# results = Sql.find(find_purchase_order)
+# for r in results:
+#     print(r[1])
+
+#.//*[@class="el-table__row"][1]/td[3]/div
+
+
+# import json
+# import requests
+# from functools import reduce
+# re = requests.Session()
+# login = re.post(url="http://www.titun365.com/login/login.json",data={"phone":"18258229393","password":"123456"})
+# results = re.get(url="http://www.titun365.com/billPurchaseOrder/selectBillPurchaseOrderById.json?id=1234",data={"id":"1234"})
+# js = json.loads(results.text)
+# # print(js["data"]["detailList"][1]["hasInCount"])
+#
+# def cut(x,y):
+#     return x-y
+# li = []
+# for i in js["data"]["detailList"]:
+#     c = cut(i["notInCount"],i["hasInCount"])
+#     li.append(abs(c))
+#
+# def add(x,y):
+#     return x+y
+#
+# ad = reduce(add,li)
+# print(ad)
+
+# def high(x,y,f):         传入函数
+#     return f(x+y)
+#
+# f = abs
+# x = -100
+# y = 2
+#
+# print(high(x,y,f))
+
+
+# #普通筛选
+# l = []
+# for i in range(1,101):
+#     if i%2 ==1:
+#         l.append(i)
+# print(l)
+# #高级方法filter筛选
+# def ou(x):
+#     return x % 2 ==1
+# y = list(filter(ou,[x for x in range(1,101)]))
+# print(y)
+# #列表表达式筛选
+# y2 = [x for x in range(1,101) if x%2==1]
+# print(y2)
+# #加匿名函数的filte筛选
+# y3 = list(filter(lambda x:x%2==1,[x for x in range(1,101)]))
+# print(y3)
+
+
+
+from lxml import etree
+import json
+import requests
+
+
+# se = requests.Session()
+# login = se.post(url="http://192.168.1.15:9528/stewards/login/login.json",data={"phone":18296477676,"password":123456})
+#
+# re = se.post(url="http://192.168.1.15:9528/stewards/clothesManage/selectBorrowOrReturnRecordList.json",
+#                          data={"goodsName":None,"condition":None, "type":15,"startTime":None,"endTime":None,"pageSize":10,"pageNum":1})
+#
+# ge = se.get(url="http://192.168.1.15:9528/stewards/sysWarehouse/selectWareHoseSelect.json")
+# js = json.loads(re.text)
+# print(ge.text)
