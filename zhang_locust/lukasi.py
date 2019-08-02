@@ -26,14 +26,9 @@ class DB(object):
         sql = "insert into %s values(%s)"%(tu_1,tu_2)  #根据需求来改 ,UI自动化用不怎么到
         self.db.cursor(sql).execute()
 
-
-
-
-
-
 class Userbehavior(TaskSet):
     def login(self,phone):
-        self.client.post(url="/stewards/login/login.json", data={"phone": phone, "password": "654321"})
+        self.client.post(url="/stewards/login/login.json", data={"phone": phone, "password": "123456"})
 
     # @task(1)
     # def bur_index(self):
@@ -50,7 +45,7 @@ class Userbehavior(TaskSet):
         #                  data={"condition": "", "companyName": "", "pageSize": 15, "pageNum": 1})
         for i in self.user_all():
             self.login(phone=i)
-            self.client.get(url="http://192.168.1.15:9528/stewards/sysWarehouse/selectWareHoseSelect.json")
+            self.client.post(url="http://192.168.1.15:9528/stewards/goods/goodsList.json",data={"goodsPropertyId[0]":0,"goodsPropertyId[1]":0,"condition":None,"pageNum":1,"pageSize":15})
 
 
 class WebsiteUser(HttpLocust):
